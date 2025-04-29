@@ -23,6 +23,5 @@ build/
 .env.*.local
 
 # IDE files
-.vscode/
 .idea/
 *.iml
