@@ -1,0 +1,8 @@
+{
+  "appName": "오프라인 전용 앱",
+  "version": "1.0.0",
+  "features": {
+    "enableLogging": true,
+    "offlineMode": true
+  }
+}

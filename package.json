@@ -1,0 +1,33 @@
+{
+  "name": "my-node22-typescript-app",
+  "version": "1.0.0",
+  "description": "TypeScript Node.js  application as executable",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "ts-node src/index.ts",
+    "pkg": "pkg .",
+    "copy-config": "copy src\\config\\config.json dist\\config.json",
+    "pkg:win": "npm run build && npm run copy-config && pkg . --targets node18-win-x64 --output dist/my-app.exe",
+    "pkg:offline": "npm run build && pkg ./dist/index.js --targets node18-win-x64 --output dist/my-app.exe"
+  },
+  "bin": "dist/index.js",
+  "pkg": {
+    "scripts": "dist/**/*.js",
+    "assets": [
+      "assets/**/*",
+      "node_modules/**/*"
+    ],
+    "targets": [
+      "node18-win-x64"
+    ],
+    "outputPath": "executable"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "pkg": "^5.8.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3"
+  }
+}
